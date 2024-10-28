@@ -7,6 +7,8 @@ interface Props {
 
 const write = process.stdout.write.bind(process.stdout);
 const BAR_SIZE = 40;
+const BAR_COMPLETE_CHAR = '\u2588';
+const BAR_INCOMPLETE_CHAR = '\u2591';
 
 class Progress {
   private _cursorHide: boolean = true;
@@ -41,8 +43,8 @@ class Progress {
 
     const completedCharCount = Math.floor(percent * BAR_SIZE);
 
-    const completed = '█'.repeat(completedCharCount);
-    const uncompleted = '░'.repeat(BAR_SIZE - completedCharCount);
+    const completed = BAR_COMPLETE_CHAR.repeat(completedCharCount);
+    const uncompleted = BAR_INCOMPLETE_CHAR.repeat(BAR_SIZE - completedCharCount);
 
     write(completed + uncompleted);
   }

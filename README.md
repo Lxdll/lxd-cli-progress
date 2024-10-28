@@ -23,7 +23,7 @@ bar.stop();
   - 每次绘制时，我们使用 `ansiEscapes.cursorRestorePosition` 来恢复光标的位置。
   - 在最后 `stop` 执行后，我们使用 `ansiEscapes.cursorShow` 将光标进行显示，并且使用 `process.stdout.write(EOL);` 进行换行操作。
 
-- 显示已经下载的部分，我们使用 `█` 这个字符进行 repeat，未下载的部分，我们使用 `░` 这个字符进行 repeat。
+- 显示已经下载的部分，我们使用 `\u2588` 这个字符进行 repeat，未下载的部分，我们使用 `\u2591` 这个字符进行 repeat。
 - 字符总数为 `40`, 按当前值和总和的比例进行两个字符的绘制。
 
 TODO:
